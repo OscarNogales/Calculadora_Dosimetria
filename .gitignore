@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+
+# Build artifacts
+build/
+dist/
+*.apk
+*.aab
+
+# Local application data
+state.json
+settings.json
+*.local.json
+
+# IDE and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,25 @@
+{
+  "theme": "Dark Apple",
+  "equipment": {
+    "brand": "Varian",
+    "model": "Clinac iX",
+    "serial_number": "",
+    "beam": "Fotones",
+    "energy": "6 MV",
+    "dose_rate": "600",
+    "setup": "SSD",
+    "phantom": "Agua",
+    "distance_cm": "100.0",
+    "field_size_cm": "10 x 10",
+    "reference_depth": "10.0"
+  },
+  "measurement_equipment": {
+    "electrometer": "PTW",
+    "electrometer_model": "Unidos Webline",
+    "electrometer_serial": "",
+    "measurement_mode": "Carga (nC)",
+    "measurement_range": "Low",
+    "ion_chamber": "PTW 30013",
+    "ion_chamber_serial": ""
+  }
+}
