@@ -76,12 +76,12 @@ class FactorValue(ft.Container):
     def __init__(
         self,
         calculator: DosimetryCalculator,
-        key: str,
+        key_cal: str,
         subscript: str,
         theme: AppTheme,
     ) -> None:
         self.calculator = calculator
-        self.key = key
+        self.key_cal = key_cal
         self.value_text = ft.Text(
             self._formatted_value(),
             size=17,
@@ -101,7 +101,7 @@ class FactorValue(ft.Container):
         super().__init__(content=label, bgcolor=theme.card, padding=8, border_radius=10)
 
     def _formatted_value(self) -> str:
-        return "----" if self.calculator.last_result is None else self.calculator.get(self.key)
+        return "----" if self.calculator.last_result is None else self.calculator.get(self.key_cal)
 
     def refresh(self) -> None:
         self.value_text.value = self._formatted_value()
@@ -126,7 +126,7 @@ class CalibrationSettingsButton(ft.IconButton):
         on_values_changed: UpdateCallback,
         theme: AppTheme,
     ) -> None:
-        self.page = page
+        self.host_page = page
         self.calculator = calculator
         self.on_values_changed = on_values_changed
         controls = [self._build_field(key, label, theme) for key, label in self.FIELDS]
@@ -168,10 +168,10 @@ class CalibrationSettingsButton(ft.IconButton):
         return field
 
     def _open_dialog(self, _event: ft.Event[ft.IconButton]) -> None:
-        self.page.show_dialog(self.dialog)
+        self.host_page.show_dialog(self.dialog)
 
     def _close_dialog(self, _event: ft.Event[ft.TextButton]) -> None:
-        self.page.pop_dialog()
+        self.host_page.pop_dialog()
 
 
 class DoseResultCard(ft.Container):
